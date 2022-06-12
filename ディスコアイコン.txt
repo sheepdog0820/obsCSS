@@ -1,0 +1,31 @@
+URL
+https://streamkit.discord.com/overlay/voice/729219979840585759/833280442948911114?icon=true&online=true&logo=white&text_color=%23ffffff&text_size=14&text_outline_color=%23000000&text_outline_size=0&text_shadow_color=%23000000&text_shadow_size=0&bg_color=%231e2124&bg_opacity=0.95&bg_shadow_color=%23000000&bg_shadow_size=0&invite_code=7B8gUeGq6G&limit_speaking=false&small_avatars=false&hide_names=false&fade_chat=0
+幅:200
+高さ:100
+
+カスタムCSS
+@import url("https://sheepdog0820.github.io/obsCSS/obsSpeakingLitght.css");
+//対象のユーザのみ表示したい場合には「//」を削除して使用する。
+
+//しぇぱ
+//li.voice-state:not([data-reactid*="581794480680599552"]) { display:none; }
+//シララ
+//li.voice-state:not([data-reactid*="812984266135961620"]) { display:none; }
+//そう
+//li.voice-state:not([data-reactid*="705399665583194134"]) { display:none; }
+//じぇら
+//li.voice-state:not([data-reactid*="729219426217623613"]) { display:none; }
+//ぬけちゃそ
+//li.voice-state:not([data-reactid*="430760002664529952"]) { display:none; }
+//やぎ
+//li.voice-state:not([data-reactid*="742214432930922497"]) { display:none; }
+//バケラッ太
+//li.voice-state:not([data-reactid*="843809139875774484"]) { display:none; }
+//メイサイ
+//li.voice-state:not([data-reactid*="729219551471992833"]) { display:none; }
+//伊藤
+//li.voice-state:not([data-reactid*="749094588198944820"]) { display:none; }
+//止水
+//li.voice-state:not([data-reactid*="592336583189856277"]) { display:none; }
+//青空にフルート
+//li.voice-state:not([data-reactid*="911132190983733268"]) { display:none; }
