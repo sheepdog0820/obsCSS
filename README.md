@@ -1,0 +1,3 @@
+# obsCSS
+OBS2CSS
+OBSで使用するCSSの元
