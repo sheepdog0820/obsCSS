@@ -1,4 +1,4 @@
-li.voice-state:not([data-reactid*=--user-id]) { display:none; }
+li.voice-state:not([data-reactid*=var(--user-id)]) { display:none; }
 body {
   background-color: rgba(0, 0, 0, 0);
   margin: 0;
