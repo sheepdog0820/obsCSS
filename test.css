@@ -1,0 +1,29 @@
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.avatar {
+  border-width: 4px ! important;
+  border-color: rgba(0,0,0,0) ! important;
+  filter: brightness(60%);
+}
+.speaking {
+  filter: brightness(100%);
+  animation-name: speak-now;
+  animation-duration: 1s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes speak-now {
+  0% {
+    box-shadow: 0 0 4px #ffffff;
+  }
+  50% {
+    box-shadow: 0 0 16px #ffffff;
+  }
+  100% {
+    box-shadow: 0 0 4px #ffffff;
+  }
+}
