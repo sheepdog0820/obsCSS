@@ -1,0 +1,31 @@
+/* 選択したユーザ以外の画像を非表示にする */
+img:not([src*=DiscordUseID]){ display:none; }
+img:not([src*=DiscordUseID])+div{ display:none; }
+li{ position:fixed;top:15px;left:0;right:0;width:100%; }
+
+/* アイコンを立ち絵画像に差し替える */
+img[class*="Voice_avatar_"]{
+  content:url(ImageURL);
+  height:auto !important;
+  width:100% !important;
+  border-radius:0 !important;
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  filter: brightness(50%);
+}
+
+/* 発話状態の設定 */
+img[class*="Voice_avatarSpeaking"]{
+  border-color:rgba(0,0,0,0) !important;
+  filter: brightness(100%) ;
+}
+
+
+/* ネームタグ表示位置調整 */
+div[class*='Voice_user']{ display: none; }
+
+/* 色々消すヤツ */
+body { background-color: rgba(0, 0, 0, 0); overflow: hidden; }
