@@ -2,6 +2,8 @@ import obspython as obs
 
 # --- ユーザー情報（最大8名） ---
 user_data = [{"id": "", "url": "", "source": ""} for _ in range(20)]
+use_test_discord_id = False
+test_discord_id = ""
 
 # --- 説明文（上部に表示される） ---
 def script_description():
@@ -20,6 +22,9 @@ def script_description():
 def script_properties():
     props = obs.obs_properties_create()
 
+    obs.obs_properties_add_bool(props, "use_test_discord_id", "テスト用Discord IDを使用する")
+    obs.obs_properties_add_text(props, "test_discord_id", "テスト用Discord ID", obs.OBS_TEXT_DEFAULT)
+
     for i in range(20):
         obs.obs_properties_add_text(props, f"user_id_{i}", f"ユーザー{i+1} Discord ID", obs.OBS_TEXT_DEFAULT)
         obs.obs_properties_add_text(props, f"user_url_{i}", f"ユーザー{i+1} 画像URL", obs.OBS_TEXT_DEFAULT)
@@ -29,7 +34,10 @@ def script_properties():
 
 # --- 設定変更時に呼ばれる処理 ---
 def script_update(settings):
-    global user_data
+    global user_data, use_test_discord_id, test_discord_id
+
+    use_test_discord_id = obs.obs_data_get_bool(settings, "use_test_discord_id")
+    test_discord_id = obs.obs_data_get_string(settings, "test_discord_id").strip()
 
     for i in range(20):
         user_data[i]["id"] = obs.obs_data_get_string(settings, f"user_id_{i}").strip()
@@ -50,7 +58,11 @@ def update_all_sources():
             continue
 
         settings = obs.obs_source_get_settings(source)
-        obs.obs_data_set_string(settings, "css", build_css(user["id"], user["url"]))
+        if use_test_discord_id:
+            discord_id = test_discord_id
+        else:
+            discord_id = user["id"]
+        obs.obs_data_set_string(settings, "css", build_css(discord_id, user["url"]))
         obs.obs_source_update(source, settings)
 
         obs.obs_data_release(settings)
